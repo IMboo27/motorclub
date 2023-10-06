@@ -56,7 +56,7 @@ session_start();
           <!-- Logo -->
           <div class="col-xl-2 col-lg-2 col-md-1">
             <div class="logo">
-              <a href="index.html"><img src="assets/img/logo/prospek1.png" width="150" height="80" alt="" />
+              <a href="index.php"><img src="assets/img/logo/prospek1.png" width="150" height="80" alt="" />
                 <p class="text-center" style="color: white; margin-right: 1em;">SAVPROMED</p>
               </a>
             </div>
@@ -67,26 +67,26 @@ session_start();
               <div class="main-menu f-right d-none d-lg-block">
                 <nav>
                   <ul id="navigation">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="produk.html">Produk</a></li>
-                    <li><a href="gallery.html">gallery</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="gallery.php">gallery</a></li>
+                    <li><a href="profile.php">Profile</a></li>
                     <li>
-                      <a href="visimisi.html">visi & misi</a>
+                      <a href="visimisi.php">visi & misi</a>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li>
-                          <a href="blog.html">Menu</a>
+                          <a href="">Menu</a>
                           <ul class="submenu">
-                            <li><a href="blog.html">Artikel</a></li>
+                            <li><a href="artikel.php">Artikel</a></li>
                             <li>
-                              <a href="blog_details.html">Events</a>
+                              <a href="events.php">Events</a>
                             </li>
                             <li>
-                              <a href="blog_details.html">Client</a>
+                              <a href="client.php">Client</a>
                             </li>
-                            <li><a href="elements.html">Login</a></li>
+                            <li><a href="elements.php">Login</a></li>
                           </ul>
                         </li>
                   </ul>
@@ -121,7 +121,7 @@ session_start();
               <h1 data-animation="fadeInLeft" data-delay="0.4s">
                 SAUDARA VIXION PROSPEK medan
               </h1>
-              <a href="from.html" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">Login</a>
+              <a href="from.php" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">Login</a>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ session_start();
               <h1 data-animation="fadeInLeft" data-delay="0.4s">
                 kita akan mempererat tali silahturahmi.
               </h1>
-              <a href="from.html" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">gabung bersama
+              <a href="from.php" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">gabung bersama
                 kami</a>
             </div>
           </div>
@@ -324,67 +324,105 @@ session_start();
   <!-- client feedback End -->
 
   <!-- gallery start -->
-  <div class="gallery-area">
-    <div class="container-fluid p-0 fix">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="box snake mb-30">
-            <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/m8.jpg)"></div>
-            <div class="overlay">
-              <div class="overlay-content">
-                <a href="gallery.html"><i class="ti-arrow-top-right"></i></a>
-                <h3>Leader</h3>
-                <p>Ahmad Surya Kurniawan</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
+      <div class="gallery-area">
+        <div class="container-fluid p-0 fix">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
+
+          <?php 
+          include 'koneksi.php';
+          $query=mysqli_query($koneksi,"SELECT * FROM produk_motor");
+          $gallery = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+          ?>
+
+          <?php foreach ($gallery as $produk):?>
+
+            <div class="col-lg-6">
               <div class="box snake mb-30">
-                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/m10.jpg)"></div>
+                <div
+                  class="gallery-img big-img"
+                  style="background-image: url(assets/img/gallery/<?= $produk['img_produk'];?>)"
+                ></div>
                 <div class="overlay">
                   <div class="overlay-content">
-                    <a href="gallery.html"><i class="ti-arrow-top-right"></i></a>
-                    <h3>Sekretaris</h3>
-                    <p>Dondi Firmansyah</p>
+                    <a href="gallery.php"
+                      ><i class="ti-arrow-top-right"></i
+                    ></a>
+                    <h3><?= $produk['nama_produk'];?></h3>
+                    <p><?= $produk['ket_produk'];?></p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="box snake mb-30">
-                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/m9.jpg)"></div>
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <a href="gallery.html"><i class="ti-arrow-top-right"></i></a>
-                    <h3>Bendahara</h3>
-                    <p>Richard sembiring</p>
+            <?php endforeach ?>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="box snake mb-30">
+                    <div
+                      class="gallery-img small-img"
+                      style="background-image: url(assets/img/gallery/m10.jpg)"
+                    ></div>
+                    <div class="overlay">
+                      <div class="overlay-content">
+                        <a href="gallery.php"
+                          ><i class="ti-arrow-top-right"></i
+                        ></a>
+                        <h3>Sekretaris</h3>
+                        <p>Dondi Firmansyah</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="box snake mb-30">
-                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/m6.jpg)"></div>
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <a href="gallery.html"><i class="ti-arrow-top-right"></i></a>
-                    <h3>Member</h3>
-                    <p>Kito Mulyodono</p>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="box snake mb-30">
+                    <div
+                      class="gallery-img small-img"
+                      style="background-image: url(assets/img/gallery/m9.jpg)"
+                    ></div>
+                    <div class="overlay">
+                      <div class="overlay-content">
+                        <a href="gallery.php"
+                          ><i class="ti-arrow-top-right"></i
+                        ></a>
+                        <h3>Bendahara</h3>
+                        <p>Richard sembiring</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="box snake mb-30">
-                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/m7.jpg)"></div>
-                <div class="overlay">
-                  <div class="overlay-content">
-                    <a href="gallery.html"><i class="ti-arrow-top-right"></i></a>
-                    <h3>Member</h3>
-                    <p>Rozi Andrian</p>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="box snake mb-30">
+                    <div
+                      class="gallery-img small-img"
+                      style="background-image: url(assets/img/gallery/m6.jpg)"
+                    ></div>
+                    <div class="overlay">
+                      <div class="overlay-content">
+                        <a href="gallery.php"
+                          ><i class="ti-arrow-top-right"></i
+                        ></a>
+                        <h3>Member</h3>
+                        <p>Kito Mulyodono</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="box snake mb-30">
+                    <div
+                      class="gallery-img small-img"
+                      style="background-image: url(assets/img/gallery/m7.jpg)"
+                    ></div>
+                    <div class="overlay">
+                      <div class="overlay-content">
+                        <a href="gallery.php"
+                          ><i class="ti-arrow-top-right"></i
+                        ></a>
+                        <h3>Member</h3>
+                        <p>Rozi Andrian</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -392,9 +430,7 @@ session_start();
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- gallery End -->
+      <!-- gallery End -->
   <!--? Want To work -->
   <section class="wantToWork-area w-padding section-bg" data-background="assets/img/gallery/section_bg02.png">
     <div class="container">
@@ -446,67 +482,64 @@ session_start();
   <!-- Date Tabs End -->
   <!--? Contact form Start -->
   <section class="contact-form-main">
-    <div class="container">
-      <div class="row justify-content-end">
-        <div class="col-xl-7 col-lg-7">
-          <div class="form-wrapper">
-            <!--Section Tittle  -->
-            <div class="form-tittle">
-              <div class="row">
-                <div class="col-lg-11 col-md-10 col-sm-10">
-                  <div class="section-tittle">
-                    <span>Formulir Daftar</span>
-                    <h2>Bergabunglah bersama kami <br />
-                      Gratis!</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--End Section Tittle  -->
-            <form id="contact-form" action="#" method="POST">
-              <div class="row">
-                <div class="col-lg-6 col-md-6">
-                  <div class="form-box user-icon mb-30">
-                    <input type="text" name="nama" placeholder="Nama" />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="form-box email-icon mb-30">
-                    <input type="text" name="phone" placeholder="Phone" />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6 mb-30">
-                  <div class="select-itms">
-                    <div class="form-box email-icon mb-30">
-                      <input type="password" name="password" placeholder="Password" />
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-xl-7 col-lg-7">
+              <div class="form-wrapper">
+                <!--Section Tittle  -->
+                <div class="form-tittle">
+                  <div class="row">
+                    <div class="col-lg-11 col-md-10 col-sm-10">
+                      <div class="section-tittle">
+                        <span>Formulir Login</span>
+                        <h2>
+                          Bergabunglah bersama kami <br />
+                          Gratis!
+                        </h2>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="form-box subject-icon mb-30">
-                    <input type="Email" name="subject" placeholder="Email" />
+                <!--End Section Tittle  -->
+                <form id="contact-form" action="cekform.php" method="POST">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                      <div class="form-box subject-icon mb-30">
+                        <input
+                          type="Email"
+                          name="email"
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-30">
+                      <div class="select-itms">
+                        <div class="form-box email-icon mb-30">
+                          <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="submit-info">
+                        <button class="btn" type="submit">Login</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-box message-icon mb-65">
-                    <textarea name="pesan" id="pesan" placeholder="Pesan"></textarea>
-                  </div>
-                  <div class="submit-info">
-                    <button class="btn" type="submit">Daftar</button>
-                  </div>
-                </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- contact left Img-->
-    <div class="from-left d-none d-lg-block">
-      <img src="assets/img/gallery/m14.jpg" alt="" />
-    </div>
-  </section>
-  <!-- Contact form End -->
+        <!-- contact left Img-->
+        <div class="from-left d-none d-lg-block">
+          <img src="assets/img/gallery/m14.jpg" alt="" />
+        </div>
+      </section>
+      <!-- Contact form End -->
 </main>
 <footer>
   <!--? Footer Start-->
@@ -532,7 +565,7 @@ session_start();
             <div class="single-footer-caption mb-50">
               <!-- logo -->
               <div class="footer-logo">
-                <a href="index.html"><img src="assets/img/logo/prospek1.png" width="80" height="80" alt="" /></a>
+                <a href="index.php"><img src="assets/img/logo/prospek1.png" width="80" height="80" alt="" /></a>
               </div>
               <div class="footer-tittle">
                 <div class="footer-pera">

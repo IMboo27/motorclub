@@ -2,14 +2,14 @@
 include'koneksi.php';
 session_start();
 // if(isset($_SESSION['username'])){
-//   header("location:index.php");
+//   header("location:html_form/indexlogin.php");
 
 //   exit();
 // }
 ?>
 
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -119,7 +119,7 @@ session_start();
             <div class="row">
               <div class="col-xl-12">
                 <div class="hero-cap hero-cap2 text-center pt-70">
-                  <h2>Anggota Baru</h2>
+                  <h2>Anggota Tim</h2>
                 </div>
               </div>
             </div>
@@ -173,6 +173,7 @@ session_start();
                     <div class="col-lg-12">
                       <div class="submit-info">
                         <button class="btn" type="submit">Login</button>
+                        <a class="btn" href="register.php">Daftar</a>
                       </div>
                     </div>
                   </div>

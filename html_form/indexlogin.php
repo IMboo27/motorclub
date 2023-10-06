@@ -1,3 +1,13 @@
+<?php
+include'koneksi.php';
+session_start();
+// if(!isset($_SESSION['username'])){
+//   header("location:from.php");
+//   exit();
+// }
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -20,7 +30,7 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets_form/images/favicon.png"
+      href="../assets_form/images/prospek.jpg"
     />
     <!-- Custom CSS -->
     <link
@@ -68,7 +78,7 @@
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="indexlogin.php">
               <!-- Logo icon -->
               <b class="logo-icon ps-2">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -274,7 +284,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="index.php"
+                  href="indexlogin.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-view-dashboard"></i
                   ><span class="hide-menu">Dashboard</span></a

@@ -1,3 +1,13 @@
+<?php
+include'koneksi.php';
+session_start();
+// if(!isset($_SESSION['username'])){
+//   header("location:indexlogin.php");
+//   exit();
+// }
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -20,7 +30,7 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets_form/images/favicon.png"
+      href="../assets_form/images/prospek.jpg"
     />
     <!-- Custom CSS -->
     <link href="../dist_form/css/style.min.css" rel="stylesheet" />
@@ -63,7 +73,7 @@
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="indexlogin.php">
               <!-- Logo icon -->
               <b class="logo-icon ps-2">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -241,7 +251,7 @@
                     Setting</a
                   >
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="javascript:void(0)"
+                  <a class="dropdown-item" href="../index.php"
                     ><i class="fa fa-power-off me-1 ms-1"></i> Logout</a
                   >
                   <div class="dropdown-divider"></div>
@@ -269,7 +279,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="index.php"
+                  href="indexlogin.php"
                   aria-expanded="false"
                   ><i class="mdi mdi-view-dashboard"></i
                   ><span class="hide-menu">Dashboard</span></a
@@ -544,485 +554,170 @@
           <!-- ============================================================== -->
           <!-- Start Page Content -->
           <!-- ============================================================== -->
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
+
+
+          <!-- <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card" style="width: auto;">
+                  <img class="card-img-top" src="../assets_form/images/users/baju.jpeg" alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title mb-0"> <b> Produk Admin </b></h4>
-                </div>
-                <div class="comment-widgets scrollable">
-                  <!-- Comment Row -->
-                  <div class="d-flex flex-row comment-row mt-0">
-                    <div class="p-2">
-                      <img
-                        src="../assets_form/images/users/baju.jpeg"
-                        alt="user"
-                        width="50"
-                        class="rounded-circle"
-                      />
+                  <h5 class="card-title">Kaos Oblong</h5>
+                  <p class="card-text">Kualitas No 1 diseluruh indonesia.
+                            Cintai lah produk lokal. </p>
+                  <div class="comment-footer">
+                            <a
+                              type="button"
+                              href=""
+                              class="btn btn-cyan btn-sm text-white"
+                            >
+                              Edit
+                            </a>
+                            <button
+                              type="button"
+                              class="btn btn-success btn-sm text-white"
+                            >
+                              Publish
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-danger btn-sm text-white"
+                            >
+                              Delete
+                            </button>
                     </div>
-                    <div class="comment-text w-100">
-                      <h6 class="font-medium">Baju</h6>
-                      <span class="mb-3 d-block"
-                        >Kualitas No 1 diseluruh indonesia.
-                        Cintai lah produk lokal.
-                      </span>
-                      <div class="comment-footer">
-                        <span class="text-muted float-end">April 14, 2021</span>
-                        <a
-                          type="button"
-                          href=""
-                          class="btn btn-cyan btn-sm text-white"
-                        >
-                          Edit
-                        </a>
-                        <button
-                          type="button"
-                          class="btn btn-success btn-sm text-white"
-                        >
-                          Publish
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Comment Row -->
-                  <div class="d-flex flex-row comment-row">
-                    <div class="p-2">
-                      <img
-                        src="../assets_form/images/users/stiker.jpg"
-                        alt="user"
-                        width="50"
-                        class="rounded-circle"
-                      />
-                    </div>
-                    <div class="comment-text active w-100">
-                      <h6 class="font-medium">Stiker Keren</h6>
-                      <span class="mb-3 d-block"
-                        >Tampil keren dengan desain stiker yang modern.
-                      </span>
-                      <div class="comment-footer">
-                        <span class="text-muted float-end">May 10, 2021</span>
-                        <button
-                          type="button"
-                          class="btn btn-cyan btn-sm text-white"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-success btn-sm text-white"
-                        >
-                          Publish
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Comment Row -->
-                  <div class="d-flex flex-row comment-row">
-                    <div class="p-2">
-                      <img
-                        src="../assets_form/images/users/mesin.png"
-                        alt="user"
-                        width="50"
-                        class="rounded-circle"
-                      />
-                    </div>
-                    <div class="comment-text w-100">
-                      <h6 class="font-medium">Mesin</h6>
-                      <span class="mb-3 d-block"
-                        >Tingkatkan performa mesin mu dengan produk yang kami sediakan.
-                      </span>
-                      <div class="comment-footer">
-                        <span class="text-muted float-end">August 1, 2021</span>
-                        <button
-                          type="button"
-                          class="btn btn-cyan btn-sm text-white"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-success btn-sm text-white"
-                        >
-                          Publish
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Comment Row -->
-                  <!-- <div class="d-flex flex-row comment-row">
-                    <div class="p-2">
-                      <img
-                        src="../assets_form/images/users/4.jpg"
-                        alt="user"
-                        width="50"
-                        class="rounded-circle"
-                      />
-                    </div>
-                    <div class="comment-text w-100">
-                      <h6 class="font-medium">Johnathan Doeting</h6>
-                      <span class="mb-3 d-block"
-                        >Lorem Ipsum is simply dummy text of the printing and
-                        type setting industry.
-                      </span>
-                      <div class="comment-footer">
-                        <span class="text-muted float-end">August 1, 2021</span>
-                        <button
-                          type="button"
-                          class="btn btn-cyan btn-sm text-white"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-success btn-sm text-white"
-                        >
-                          Publish
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- Comment Row -->
-                  <!-- <div class="d-flex flex-row comment-row">
-                    <div class="p-2">
-                      <img
-                        src="../assets_form/images/users/3.jpg"
-                        alt="user"
-                        width="50"
-                        class="rounded-circle"
-                      />
-                    </div>
-                    <div class="comment-text w-100">
-                      <h6 class="font-medium">Johnathan Doeting</h6>
-                      <span class="mb-3 d-block"
-                        >Lorem Ipsum is simply dummy text of the printing and
-                        type setting industry.
-                      </span>
-                      <div class="comment-footer">
-                        <span class="text-muted float-end">August 1, 2021</span>
-                        <button
-                          type="button"
-                          class="btn btn-cyan btn-sm text-white"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-success btn-sm text-white"
-                        >
-                          Publish
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-sm text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div> -->
                 </div>
               </div>
-              <!-- accoridan part -->
-              <!-- <div class="accordion" id="accordionExample">
-                <div class="card mb-0">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <a
-                        class="d-flex align-items-center"
-                        data-toggle="collapse"
-                        data-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        <i
-                          class="me-1 mdi mdi-magnet fs-4"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Accordion Example 1</span>
-                      </a>
-                    </h5>
-                  </div>
-                  <div
-                    id="collapseOne"
-                    class="collapse show"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia
-                      aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                      tempor, sunt aliqua put a bird on it squid single-origin
-                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                      helvetica, craft beer labore wes anderson cred nesciunt
-                      sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table, raw
-                      denim aesthetic synth nesciunt you probably haven't heard
-                      of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-0 border-top">
-                  <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                      <a
-                        class="collapsed d-flex align-items-center"
-                        data-toggle="collapse"
-                        data-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                      >
-                        <i
-                          class="me-1 mdi mdi-magnet fs-4"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Accordion Example 2</span>
-                      </a>
-                    </h5>
-                  </div>
-                  <div
-                    id="collapseTwo"
-                    class="collapse"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia
-                      aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                      tempor, sunt aliqua put a bird on it squid single-origin
-                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                      helvetica, craft beer labore wes anderson cred nesciunt
-                      sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table, raw
-                      denim aesthetic synth nesciunt you probably haven't heard
-                      of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-                <div class="card mb-0 border-top">
-                  <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                      <a
-                        class="collapsed d-flex align-items-center"
-                        data-toggle="collapse"
-                        data-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                      >
-                        <i
-                          class="me-1 mdi mdi-magnet fs-4"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Accordion Example 3</span>
-                      </a>
-                    </h5>
-                  </div>
-                  <div
-                    id="collapseThree"
-                    class="collapse"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid. 3 wolf moon officia
-                      aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                      tempor, sunt aliqua put a bird on it squid single-origin
-                      coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                      helvetica, craft beer labore wes anderson cred nesciunt
-                      sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table, raw
-                      denim aesthetic synth nesciunt you probably haven't heard
-                      of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-              <!-- toggle part -->
-              <!-- <div id="accordian-4">
-                <div class="card mt-4">
-                  <a
-                    class="card-header link"
-                    data-toggle="collapse"
-                    data-parent="#accordian-4"
-                    href="#Toggle-1"
-                    aria-expanded="true"
-                    aria-controls="Toggle-1"
-                  >
-                    <i
-                      class="seticon mdi mdi-arrow-right-bold"
-                      aria-hidden="true"
-                    ></i>
-                    <span>Toggle, Open by default</span>
-                  </a>
-                  <div id="Toggle-1" class="collapse show multi-collapse">
-                    <div class="card-body widget-content">
-                      This box is opened by default, paragraphs and is full of
-                      waffle to pad out the comment. Usually, you just wish
-                      these sorts of comments would come to an end.
-                    </div>
-                  </div>
-                  <a
-                    class="card-header link border-top"
-                    data-toggle="collapse"
-                    data-parent="#accordian-4"
-                    href="#Toggle-2"
-                    aria-expanded="false"
-                    aria-controls="Toggle-2"
-                  >
-                    <i class="seticon mdi mdi-close" aria-hidden="true"></i>
-                    <span>Toggle, Closed by default</span>
-                  </a>
-                  <div id="Toggle-2" class="multi-collapse collapse" style="">
-                    <div class="card-body widget-content">
-                      This box is now open
-                    </div>
-                  </div>
-                  <a
-                    class="card-header collapsed link border-top"
-                    data-toggle="collapse"
-                    data-parent="#accordian-4"
-                    href="#Toggle-3"
-                    aria-expanded="false"
-                    aria-controls="Toggle-3"
-                  >
-                    <i class="seticon mdi mdi-close" aria-hidden="true"></i>
-                    <span>Toggle, Closed by default</span>
-                  </a>
-                  <div id="Toggle-3" class="collapse multi-collapse">
-                    <div class="card-body widget-content">
-                      This box is now open
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-              <!-- card new -->
-              <!-- <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title mb-0">News Updates</h4>
-                </div>
-                <ul class="list-style-none">
-                  <li class="d-flex no-block card-body">
-                    <i class="mdi mdi-check-circle fs-4 w-30px mt-1"></i>
-                    <div>
-                      <a href="#" class="mb-0 font-medium p-0"
-                        >Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit.</a
-                      >
-                      <span class="text-muted"
-                        >dolor sit amet, consectetur adipiscing</span
-                      >
-                    </div>
-                    <div class="ms-auto">
-                      <div class="tetx-right">
-                        <h5 class="text-muted mb-0">20</h5>
-                        <span class="text-muted font-16">Jan</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="d-flex no-block card-body border-top">
-                    <i class="mdi mdi-gift fs-4 w-30px mt-1"></i>
-                    <div>
-                      <a href="#" class="mb-0 font-medium p-0"
-                        >Congratulation Maruti, Happy Birthday</a
-                      >
-                      <span class="text-muted"
-                        >many many happy returns of the day</span
-                      >
-                    </div>
-                    <div class="ms-auto">
-                      <div class="tetx-right">
-                        <h5 class="text-muted mb-0">11</h5>
-                        <span class="text-muted font-16">Jan</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="d-flex no-block card-body border-top">
-                    <i class="mdi mdi-plus fs-4 w-30px mt-1"></i>
-                    <div>
-                      <a href="#" class="mb-0 font-medium p-0"
-                        >Maruti is a Responsive Admin theme</a
-                      >
-                      <span class="text-muted"
-                        >But already everything was solved. It will ...</span
-                      >
-                    </div>
-                    <div class="ms-auto">
-                      <div class="tetx-right">
-                        <h5 class="text-muted mb-0">19</h5>
-                        <span class="text-muted font-16">Jan</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="d-flex no-block card-body border-top">
-                    <i class="mdi mdi-leaf fs-4 w-30px mt-1"></i>
-                    <div>
-                      <a href="#" class="mb-0 font-medium p-0"
-                        >Envato approved Maruti Admin template</a
-                      >
-                      <span class="text-muted"
-                        >i am very happy to approved by TF</span
-                      >
-                    </div>
-                    <div class="ms-auto">
-                      <div class="tetx-right">
-                        <h5 class="text-muted mb-0">20</h5>
-                        <span class="text-muted font-16">Jan</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="d-flex no-block card-body border-top">
-                    <i
-                      class="mdi mdi-comment-question-outline fs-4 w-30px mt-1"
-                    ></i>
-                    <div>
-                      <a href="#" class="mb-0 font-medium p-0">
-                        I am alwayse here if you have any question</a
-                      >
-                      <span class="text-muted"
-                        >we glad that you choose our template</span
-                      >
-                    </div>
-                    <div class="ms-auto">
-                      <div class="tetx-right">
-                        <h5 class="text-muted mb-0">15</h5>
-                        <span class="text-muted font-16">Jan</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div> -->
             </div>
           </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card" style="width: auto;">
+                <img class="card-img-top" src="../assets_form/images/users/baju.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Kaos Oblong</h5>
+                  <p class="card-text">Kualitas No 1 diseluruh indonesia.
+                            Cintai lah produk lokal.</p>
+                  <div class="comment-footer">
+                            <a
+                              type="button"
+                              href=""
+                              class="btn btn-cyan btn-sm text-white"
+                            >
+                              Edit
+                            </a>
+                            <button
+                              type="button"
+                              class="btn btn-success btn-sm text-white"
+                            >
+                              Publish
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-danger btn-sm text-white"
+                            >
+                              Delete
+                            </button>
+                  </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                <div class="card" style="width: auto;">
+                  <img class="card-img-top" src="../assets_form/images/users/baju.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Kaos Oblong</h5>
+                  <p class="card-text">Kualitas No 1 diseluruh indonesia.
+                            Cintai lah produk lokal. </p>
+                  <div class="comment-footer">
+                  <a href="fep.php?id=<?php echo $tampil['id_produk']; ?>" class="btn btn-primary">Edit</a>
+                  <a href="fepp.php?id=<?php echo $tampil['id_produk']; ?>" class="btn btn-warning">Publish</a>
+                  <a href="fepd.php?id=<?php echo $tampil['id_produk']; ?>" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+                <div class="card">
+                <div class="card" style="width: auto;">
+                  <img class="card-img-top" src="../assets_form/images/users/baju.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Kaos Oblong</h5>
+                  <p class="card-text">Kualitas No 1 diseluruh indonesia.
+                            Cintai lah produk lokal. </p>
+                  <div class="comment-footer">
+                            <a
+                              type="button"
+                              href=""
+                              class="btn btn-cyan btn-sm text-white"
+                            >
+                              Edit
+                            </a>
+                            <button
+                              type="button"
+                              class="btn btn-success btn-sm text-white"
+                            >
+                              Publish
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-danger btn-sm text-white"
+                            >
+                              Delete
+                            </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card" style="width: auto;">
+                <img class="card-img-top" src="../assets_form/images/users/baju.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Kaos Oblong</h5>
+                  <p class="card-text">Kualitas No 1 diseluruh indonesia.
+                            Cintai lah produk lokal.</p>
+                  <div class="comment-footer">
+                            <a
+                              type="button"
+                              href=""
+                              class="btn btn-cyan btn-sm text-white"
+                            >
+                              Edit
+                            </a>
+                            <button
+                              type="button"
+                              class="btn btn-success btn-sm text-white"
+                            >
+                              Publish
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-danger btn-sm text-white"
+                            >
+                              Delete
+                            </button>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+
+          
+
+          
+              <!-- </div> -->
+
+            
+            
           <!-- ============================================================== -->
           <!-- End PAge Content -->
           <!-- ============================================================== -->

@@ -43,7 +43,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/prospek1.png" width="150" height="80" alt="">
+                            <a href="index.php"><img src="assets/img/logo/prospek1.png" width="150" height="80" alt="">
                                 <p class="text-center" style="color: white; margin-right: 1em;">SAVPROMED</p>
                             </a>
                         </div>
@@ -52,22 +52,35 @@
                         <div class="menu-main d-flex align-items-center justify-content-end">
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="produk.html">Produk</a></li>
-                                        <li><a href="gallery.html">gallery</a></li>
-                                        <li><a href="profile.html">Profile</a></li>
-                                        <li>
-                                            <a href="visimisi.html">visi & misi</a>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="gallery.php">gallery</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li>
+                      <a href="visimisi.php">visi & misi</a>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li>
+                          <a href="">Menu</a>
+                          <ul class="submenu">
+                            <li><a href="artikel.php">Artikel</a></li>
+                            <li>
+                              <a href="events.php">Events</a>
+                            </li>
+                            <li>
+                              <a href="client.php">Client</a>
+                            </li>
+                            <li><a href="elements.php">Login</a></li>
+                          </ul>
+                        </li>
+                  </ul>
+                </nav>
+              </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="from.html" class="btn header-btn">Login</a>
+                                <a href="from.php" class="btn header-btn">Login</a>
                             </div>
                         </div>
                     </div>
@@ -232,7 +245,7 @@
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="assets/img/logo/prospek1.png" width="80" height="80"
+                                <a href="index.php"><img src="assets/img/logo/prospek1.png" width="80" height="80"
                                         alt="" /></a>
                             </div>
                             <div class="footer-tittle">

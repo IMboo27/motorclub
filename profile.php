@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Health & Fitness | Template</title>
+    <title>Enjoy your RIDING with US</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="site.webmanifest" />
@@ -50,7 +50,7 @@
               <!-- Logo -->
               <div class="col-xl-2 col-lg-2 col-md-1">
                 <div class="logo">
-                  <a href="index.php"
+                  <a href="indexlogin.php"
                     ><img
                       src="assets/img/logo/prospek1.png"
                       width="150"
@@ -72,20 +72,33 @@
                 >
                   <!-- Main-menu -->
                   <div class="main-menu f-right d-none d-lg-block">
-                    <nav>
-                      <ul id="navigation">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about.php">About</a></li>
-                        <li><a href="produk.php">Produk</a></li>
-                        <li><a href="gallery.php">gallery</a></li>
-                        <li><a href="profile.php">Profile</a></li>
-                        <li>
-                          <a href="visimisi.php">visi & misi</a>
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="indexlogin.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="gallery.php">gallery</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li>
+                      <a href="visimisi.php">visi & misi</a>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li>
+                          <a href="">Menu</a>
+                          <ul class="submenu">
+                            <li><a href="artikel.php">Artikel</a></li>
+                            <li>
+                              <a href="events.php">Events</a>
+                            </li>
+                            <li>
+                              <a href="client.php">Client</a>
+                            </li>
+                            <li><a href="elements.php">Login</a></li>
+                          </ul>
                         </li>
-                        <li><a href="contact.php">Contact</a></li>
-                      </ul>
-                    </nav>
-                  </div>
+                  </ul>
+                </nav>
+              </div>
                   <div class="header-right-btn f-right d-none d-lg-block ml-30">
                     <a href="from.php" class="btn header-btn">Login</a>
                   </div>
@@ -180,7 +193,7 @@
                   <div class="row">
                     <div class="col-lg-11 col-md-10 col-sm-10">
                       <div class="section-tittle">
-                        <span>Formulir Daftar</span>
+                        <span>Formulir Login</span>
                         <h2>
                           Bergabunglah bersama kami <br />
                           Gratis!
@@ -190,16 +203,15 @@
                   </div>
                 </div>
                 <!--End Section Tittle  -->
-                <form id="contact-form" action="#" method="POST">
+                <form id="contact-form" action="cekform.php" method="POST">
                   <div class="row">
                     <div class="col-lg-6 col-md-6">
-                      <div class="form-box user-icon mb-30">
-                        <input type="text" name="nama" placeholder="Nama" />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-box email-icon mb-30">
-                        <input type="text" name="phone" placeholder="Phone" />
+                      <div class="form-box subject-icon mb-30">
+                        <input
+                          type="Email"
+                          name="email"
+                          placeholder="Email"
+                        />
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 mb-30">
@@ -213,25 +225,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-box subject-icon mb-30">
-                        <input
-                          type="Email"
-                          name="subject"
-                          placeholder="Email"
-                        />
-                      </div>
-                    </div>
                     <div class="col-lg-12">
-                      <div class="form-box message-icon mb-65">
-                        <textarea
-                          name="pesan"
-                          id="pesan"
-                          placeholder="Pesan"
-                        ></textarea>
-                      </div>
                       <div class="submit-info">
-                        <button class="btn" type="submit">Daftar</button>
+                        <button class="btn" type="submit">Login</button>
                       </div>
                     </div>
                   </div>
@@ -274,7 +270,7 @@
                 <div class="single-footer-caption mb-50">
                   <!-- logo -->
                   <div class="footer-logo">
-                    <a href="index.php"
+                    <a href="indexlogin.php"
                       ><img
                         src="assets/img/logo/prospek1.png"
                         width="80"

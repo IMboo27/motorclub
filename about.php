@@ -72,18 +72,33 @@
                 >
                   <!-- Main-menu -->
                   <div class="main-menu f-right d-none d-lg-block">
-                    <ul id="navigation">
-                      <li><a href="index.php">Home</a></li>
-                      <li><a href="about.php">About</a></li>
-                      <li><a href="produk.php">Produk</a></li>
-                      <li><a href="gallery.php">gallery</a></li>
-                      <li><a href="profile.php">Profile</a></li>
-                      <li>
-                        <a href="visimisi.php">visi & misi</a>
-                      </li>
-                      <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                  </div>
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="gallery.php">gallery</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li>
+                      <a href="visimisi.php">visi & misi</a>
+                    </li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li>
+                          <a href="">Menu</a>
+                          <ul class="submenu">
+                            <li><a href="artikel.php">Artikel</a></li>
+                            <li>
+                              <a href="events.php">Events</a>
+                            </li>
+                            <li>
+                              <a href="client.php">Client</a>
+                            </li>
+                            <li><a href="elements.php">Login</a></li>
+                          </ul>
+                        </li>
+                  </ul>
+                </nav>
+              </div>
                   <div class="header-right-btn f-right d-none d-lg-block ml-30">
                     <a href="from.php" class="btn header-btn">Login</a>
                   </div>
@@ -348,23 +363,34 @@
       <div class="gallery-area">
         <div class="container-fluid p-0 fix">
           <div class="row">
+
+          <?php 
+          include 'koneksi.php';
+          $query=mysqli_query($koneksi,"SELECT * FROM produk_motor");
+          $gallery = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+          ?>
+
+          <?php foreach ($gallery as $produk):?>
+
             <div class="col-lg-6">
               <div class="box snake mb-30">
                 <div
                   class="gallery-img big-img"
-                  style="background-image: url(assets/img/gallery/m8.jpg)"
+                  style="background-image: url(assets/img/gallery/<?= $produk['img_produk'];?>)"
                 ></div>
                 <div class="overlay">
                   <div class="overlay-content">
                     <a href="gallery.php"
                       ><i class="ti-arrow-top-right"></i
                     ></a>
-                    <h3>Leader</h3>
-                    <p>Ahmad Surya Kurniawan</p>
+                    <h3><?= $produk['nama_produk'];?></h3>
+                    <p><?= $produk['ket_produk'];?></p>
                   </div>
                 </div>
               </div>
             </div>
+            <?php endforeach ?>
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -504,7 +530,7 @@
                   <div class="row">
                     <div class="col-lg-11 col-md-10 col-sm-10">
                       <div class="section-tittle">
-                        <span>Formulir Daftar</span>
+                        <span>Formulir Login</span>
                         <h2>
                           Bergabunglah bersama kami <br />
                           Gratis!
@@ -514,16 +540,15 @@
                   </div>
                 </div>
                 <!--End Section Tittle  -->
-                <form id="contact-form" action="#" method="POST">
+                <form id="contact-form" action="cekform.php" method="POST">
                   <div class="row">
                     <div class="col-lg-6 col-md-6">
-                      <div class="form-box user-icon mb-30">
-                        <input type="text" name="nama" placeholder="Nama" />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-box email-icon mb-30">
-                        <input type="text" name="phone" placeholder="Phone" />
+                      <div class="form-box subject-icon mb-30">
+                        <input
+                          type="Email"
+                          name="email"
+                          placeholder="Email"
+                        />
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 mb-30">
@@ -537,25 +562,9 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="form-box subject-icon mb-30">
-                        <input
-                          type="Email"
-                          name="subject"
-                          placeholder="Email"
-                        />
-                      </div>
-                    </div>
                     <div class="col-lg-12">
-                      <div class="form-box message-icon mb-65">
-                        <textarea
-                          name="pesan"
-                          id="pesan"
-                          placeholder="Pesan"
-                        ></textarea>
-                      </div>
                       <div class="submit-info">
-                        <button class="btn" type="submit">Daftar</button>
+                        <button class="btn" type="submit">Login</button>
                       </div>
                     </div>
                   </div>
